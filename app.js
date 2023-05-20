@@ -1,8 +1,6 @@
 import Express from "express";
-import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import dotenv from 'dotenv';
-import {Book} from './Book.js';
 import fetch from "node-fetch";
 dotenv.config();
 
@@ -13,10 +11,6 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.get('/', (req, res) => {
     res.send('Привет');
 });
-
-// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() => console.log('Connected'))
-//   .catch((err) => console.log(err));
 
 app.get('/api/books', async (req, res) => {
     try {

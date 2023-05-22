@@ -9,13 +9,12 @@ const app = Express();
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.get('/', (req, res) => {
-    res.send('Привет');
+    res.sendFile(__dirname+'/src/App.tsx');
 });
 
 app.get('/api/books', async (req, res) => {
     try {
-        const amount = 5;
-        // req.query.amount;
+        const amount = req.query.amount;
 
         let rawData = await fetch(`https://www.googleapis.com/books/v1/volumes?q=*&printType=books&maxResult=${amount}`);
         let googleApiBooks = await rawData.json();

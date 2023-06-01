@@ -1,17 +1,16 @@
 import MainPage from "./components/MainPage";
 import axios from 'axios'
+import classes from './types/App.module.css'
+import React from 'react'
+import { useSelector } from "react-redux";
+import { useEffect } from 'react'
+import { useAppDispatch, useAppSelector } from "./hooks/redux";
+import { fetchBooks } from "./ReduxToolkit/actionCreator";
 
 const App = () => {
 
-  const getBooks = async () => {
-    const response = await axios.get('/api/books?amount=10')
-    console.log(response)
-    return response 
-  }
-
   return (
-    <div className="flex justify-center">
-      {/* <button onClick={getBooks}>TRY</button> */}
+    <div className={classes.app}>
       <MainPage></MainPage>
     </div>
   );

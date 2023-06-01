@@ -1,0 +1,7 @@
+.appWrapper {
+    @apply flex flex-col w-[2000px]
+}
+
+.mainContentContainer {
+    @apply flex my-[30px]
+}

@@ -1,0 +1,19 @@
+.headerContainer {
+    @apply w-[100%] h-[100px] flex space-x-[60px] justify-between;
+}
+
+.itemsContainer {
+    @apply flex space-x-[30px] mt-[36px];
+}
+
+.item {
+    @apply text-[23px]
+}
+
+.nav {
+    /* @apply   */
+}
+
+.logo {
+    @apply flex space-x-[30px]  items-center text-[40px] uppercase font-bold;
+}

@@ -1,0 +1,7 @@
+.mySearch {
+    @apply border-[2px] border-[#00000080] w-[500px] px-[20px] py-[5px];
+}
+
+.mySearchContainer {
+    @apply flex items-center pl-[500px]; 
+}

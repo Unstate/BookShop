@@ -1,6 +1,8 @@
+import classes from './../types/FilterBar.module.css'
+
 const FilterBar = () => {
     return (
-        <div className="bg-pink-500 w-[30%]">
+        <div className={classes.filterBarContainer}>
             sdfsdfs
         </div>
     )

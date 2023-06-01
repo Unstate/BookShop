@@ -1,0 +1,7 @@
+.myButtonContainer .myButton {
+    @apply uppercase m-auto my-[15px] border-[2px] border-black px-[43px] py-[10px] text-[16px];
+}
+
+.myButtonContainer {
+    @apply absolute bottom-0
+}

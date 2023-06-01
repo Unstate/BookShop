@@ -1,28 +1,31 @@
+import { Image } from '../ReduxToolkit/booksSlice';
+import classes from './../types/Book.module.css'
+import { MyButton } from './UI/MyButton/MyButton';
+
 interface BookProps {
-    id: number;
-    author: string,
+    id: string;
+    author: string[],
     title: string,
     genres: string[];
+    img: Image;
     children: React.ReactNode;
 }
 
-const Book:React.FC<BookProps> = ({id,author,title,genres}) => {
+const Book:React.FC<BookProps> = ({img,author,title}) => {
     return (
-        <div className="w-[300px] h-[450px] m-[20px] border-[3px] border-cyan-500">
-            <div className="flex justify-center">
-                <a href="#"><img className="w-[300px]" src='/pictures/cat.jpeg' alt="Картинка не прогрузилась"></img></a>
+        <div className={classes.bookContainer}>
+            <div className={classes.imageContainer}>
+                {img.thumbnail ? <a href="#"><img className={classes.image} src={img.thumbnail} alt="Картинка не прогрузилась"></img></a> : <a href="#"><img className={classes.image} src='/pictures/cat.jpeg' alt="Картинка не прогрузилась"></img></a>}
             </div>
-            <div className=" mt-[20px]">
-                <div className="mb-[5px] flex justify-center">
+            <div className={classes.bodyContainer}>
+                <div className={classes.titleContainer}>
                     <a href="#">{title}</a>
                 </div>
-                <div className="flex justify-center">
+                <div className={classes.authorContainer}>
                     <a href="#">{author}</a>
                 </div>
             </div>
-            <div>
-                <button className=" flex m-auto my-[15px] px-[80px] border boreder-[2px] border-red-500 rounded-lg">Прочитать</button>
-            </div>
+            <div className='items-end'><MyButton>Хочу почитать</MyButton></div>
         </div>
     )
 }
